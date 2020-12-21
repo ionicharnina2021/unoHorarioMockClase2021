@@ -1,3 +1,4 @@
+import { DatosMockService } from './../datos-mock.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-
+  public estudios;
+  constructor(private datosMockService:DatosMockService) {
+    this.estudios=datosMockService.getEstudios();
+  }
+  cosas(){
+    console.log("has pulsado");    
+  }
 }
